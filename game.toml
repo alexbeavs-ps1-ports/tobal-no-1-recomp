@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Tobal No. 1"
+id = "SLES-00497"
+players = 1
+exe = "disc/SLES_004.97"
+disc = "disc/Tobal No. 1 (Europe).cue"
+discs = ["disc/Tobal No. 1 (Europe).cue"]
+disc_serials = ["SLES-00497"]
+load_address = "0x80010000"
+entry_pc = "0x80096918"
+text_size = "0x000BD800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Tobal No. 1 (Europe) (Track 1).bin"
+cue_name = "Tobal No. 1 (Europe).cue"
+boot_exe = "SLES_004.97"
+known_sizes = [65185680]
+known_md5 = [
+  "ab15b20b7527801f88394f1eb35e4aa2",
+]
+known_sha1 = [
+  "a13d2fd1db8f0c8585148a9fc69e2ee86672b565",
+]
+known_crc32 = [
+  "0f66a4b4",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Tobal No. 1 Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 20
+required_disc_fp = "3c2c871ce1b7fadd51e27a730b27c5b3a3cd111d7133974943c16eab744eb880"

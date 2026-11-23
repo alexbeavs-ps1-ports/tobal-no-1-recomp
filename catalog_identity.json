@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Tobal No. 1",
+    "id": "SLES-00497",
+    "boot_exe": "SLES_004.97"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Tobal No. 1 (Europe).cue",
+    "bin_name": "Tobal No. 1 (Europe) (Track 1).bin",
+    "track_counts": [
+      20
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 65185680,
+      "md5": "ab15b20b7527801f88394f1eb35e4aa2",
+      "sha1": "a13d2fd1db8f0c8585148a9fc69e2ee86672b565",
+      "crc32": "0f66a4b4"
+    },
+    "disc_fp": "3c2c871ce1b7fadd51e27a730b27c5b3a3cd111d7133974943c16eab744eb880"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80096918",
+    "text_size": "0x000BD800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1325,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
